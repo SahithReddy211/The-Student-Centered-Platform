@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Opportunities Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🎓 Student Opportunities Hub</h1>
+    <p>Find Scholarships, Internships, Clubs, Events & Workshops Near You</p>
+  </header>
+  
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('scholarships')">Scholarships</button>
+    <button onclick="showSection('internships')">Internships</button>
+    <button onclick="showSection('clubs')">Clubs & Events</button>
+    <button onclick="showSection('workshops')">Workshops</button>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="section active">
+    <h2>Welcome to Student Opportunities Hub</h2>
+    <p>Click on the sections above to explore scholarships, internships, clubs, events, and workshops tailored for students.</p>
+  </section>
+
+  <!-- Scholarships Section -->
+  <section id="scholarships" class="section">
+    <h2>Available Scholarships</h2>
+    <div class="filter">
+      <label>Category:
+        <select id="scholarshipCategory" onchange="filterScholarships()">
+          <option value="">All</option>
+          <option value="State">State</option>
+          <option value="Central">Central</option>
+          <option value="Private">Private</option>
+        </select>
+      </label>
+    </div>
+    <div class="grid" id="scholarshipCards"></div>
+  </section>
+
+  <!-- Internships Section -->
+  <section id="internships" class="section">
+    <h2>Internship Opportunities</h2>
+    <div class="filter">
+      <select id="internshipType" onchange="filterInternships()">
+        <option value="">All Types</option>
+        <option value="Full-time">Full-time</option>
+        <option value="Part-time">Part-time</option>
+      </select>
+      <select id="internshipPaid" onchange="filterInternships()">
+        <option value="">Paid/Unpaid</option>
+        <option value="Paid">Paid</option>
+        <option value="Unpaid">Unpaid</option>
+      </select>
+      <input type="text" id="internshipLocation" oninput="filterInternships()" placeholder="Enter city/region">
+    </div>
+    <div class="grid" id="internshipCards"></div>
+  </section>
+
+  <!-- Clubs Section -->
+  <section id="clubs" class="section">
+    <h2>Clubs & Events</h2>
+    <div class="filter">
+      <input type="text" id="clubLocation" oninput="filterClubs()" placeholder="Enter city/region">
+    </div>
+    <div class="grid" id="clubCards"></div>
+  </section>
+
+  <!-- Workshops Section -->
+  <section id="workshops" class="section">
+    <h2>Workshops</h2>
+    <div class="filter">
+      <input type="text" id="workshopLocation" oninput="filterWorkshops()" placeholder="Enter city/region">
+    </div>
+    <div class="grid" id="workshopCards"></div>
+  </section>
+
+  <!-- Modal Popup -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Student Opportunities Hub | Made with ❤️ for Students</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
